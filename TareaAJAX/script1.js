@@ -20,3 +20,18 @@ fetch('data.json')
       select2.appendChild(opt2);
     });
   });
+
+function graficarComparacion() {
+  const region1 = document.getElementById('region1').value;
+  const region2 = document.getElementById('region2').value;
+
+  if (!region1 || !region2) {
+    alert("Por favor, selecciona ambas regiones.");
+    return;
+  }
+
+  if (region1 === region2) {
+    alert("Por favor, selecciona dos regiones diferentes.");
+    return;
+  }
+}
