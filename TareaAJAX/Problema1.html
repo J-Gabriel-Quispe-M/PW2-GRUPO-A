@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Problema 1</title>
+    <title>Comparación de Regiones</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    
+    <h2>Seleccione dos regiones para comparar</h2>
+
+    <label for="region1">Región 1:</label>
+    <select id="region1"></select>
+
+    <label for="region2">Región 2:</label>
+    <select id="region2"></select>
+
+    <button onclick="graficarComparacion()">Graficar</button>
+
+    <canvas id="grafico1"></canvas>
+
+    <script src="script1.js"></script>
 </body>
 </html>
