@@ -13,4 +13,27 @@ fetch('data.json')
       });
       return total;
     });
-  })
+
+    new Chart(document.getElementById('grafico2'), {
+      type: 'line',
+      data: {
+        labels: fechas,
+        datasets: [{
+          label: 'Total Confirmados (sin Lima y Callao)',
+          data: crecimiento,
+          borderColor: 'green',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Crecimiento diario (confirmados) sin Lima y Callao'
+          }
+        }
+      }
+    });
+  });
