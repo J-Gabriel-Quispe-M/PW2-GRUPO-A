@@ -1,0 +1,36 @@
+.movie-list {
+    margin-top: 20px;
+}
+
+.movie-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.movie-item h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.actor-list {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 3px solid #3498db;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
