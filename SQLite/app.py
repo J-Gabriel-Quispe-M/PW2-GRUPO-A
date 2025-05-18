@@ -37,5 +37,24 @@ def obtener_peliculas():
     finally:
         conn.close()
 
+@app.route('/api/actores/<int:movie_id>')
+def obtener_actores(movie_id):
+    try:
+        conn = get_db()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT a.ActorId, a.Name
+            FROM Actor a
+            JOIN Casting c ON a.ActorId = c.ActorId
+            WHERE c.MovieID = ?
+            ORDER BY c.Ordinal
+        """, (movie_id,))
+        actores = cursor.fetchall()
+        return jsonify([dict(actor) for actor in actores])
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        conn.close()
+
 if __name__ == '__main__':
     app.run(debug=True)
