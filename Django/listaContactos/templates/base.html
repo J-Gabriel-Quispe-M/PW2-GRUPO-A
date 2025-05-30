@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Mi Sitio Django{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>🌐 Mi Proyecto Django</h1>
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/another/">Otra página</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block contenido %}
+        <!-- Contenido específico de la página -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; 2025 - Proyecto Django</p>
+    </footer>
+</body>
+</html>
