@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio</title>
-</head>
-<body>
-    <h1>¡Bienvenido a la página de inicio con plantilla!</h1>
+{% extends "base.html" %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %}
+    <h2>¡Bienvenido a la página de inicio con plantilla heredada!</h2>
     <p>Usuario actual: {{ request.user }}</p>
     <p>¿Autenticado? {{ request.user.is_authenticated }}</p>
-</body>
-</html>
+{% endblock %}
