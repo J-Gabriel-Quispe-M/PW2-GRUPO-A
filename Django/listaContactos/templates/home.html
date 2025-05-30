@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>¡Bienvenido a la página de inicio con plantilla!</h1>
+    <p>Usuario actual: {{ request.user }}</p>
+    <p>¿Autenticado? {{ request.user.is_authenticated }}</p>
+</body>
+</html>
