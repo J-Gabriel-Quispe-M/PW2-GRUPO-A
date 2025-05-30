@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 
+from django.shortcuts import render
+
 def home(request):
-    return HttpResponse("¡Bienvenido a la página de inicio!")
+    return render(request, 'home.html')
 
 def another(request):
     if request.user.is_authenticated:
