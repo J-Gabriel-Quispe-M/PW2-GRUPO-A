@@ -20,5 +20,6 @@ from personas.views import ejemplo_contexto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('conexto/', ejemplo_contexto),
+    path('contexto/', ejemplo_contexto),
+    path('', ejemplo_contexto),
 ]
