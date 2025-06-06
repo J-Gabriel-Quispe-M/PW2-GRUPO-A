@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Sitio Django</title>
+    <style>
+        .menu-item {
+            display: block;
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .contenido {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menú vertical simple -->
+    <a href="/" class="menu-item">Home</a>
+    <a href="#" class="menu-item">Primera</a>
+    <a href="#" class="menu-item">Segunda</a>
+    <a href="#" class="menu-item">Tercera</a>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

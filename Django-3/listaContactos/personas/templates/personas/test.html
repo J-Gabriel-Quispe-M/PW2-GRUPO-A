@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Ejemplo de Contexto</title>
-</head>
-<body>
-    <h1>Datos del Usuario</h1>
-    <p>Nombre: {{ nombre }}</p>
-    <p>Edad: {{ edad }}</p>
-    <p>Ocupación: {{ ocupacion }}</p>
-</body>
-</html>
+{% extends 'personas/base.html' %}
+
+{% block content %}
+<h2>Hola Mundo desde DJango</h2>
+<h3>Con templates</h3>
+<p>
+    {{myText}}, 
+    {{myNumber}}  
+</p>
+{% endblock %}

@@ -1,9 +1,8 @@
 from django.shortcuts import render
 
-def ejemplo_contexto(request):
+def vista_contexto(request):
     contexto = {
-        'nombre' : 'Juan',
-        'edad' : 30,
-        'ocupacion' : 'Ingeniero'
+        'myText' : 'Esto es entre nosotros',
+        'myNumber' : 123,
     }
     return render (request, 'personas/test.html', contexto)
