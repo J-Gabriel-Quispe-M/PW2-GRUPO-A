@@ -4,11 +4,17 @@
     <title>Lista de Personas</title>
 </head>
 <body>
-    <h1>Personas registradas</h1>
+    {% if mostrar_titulo %}
+        <h1>Personas registradas</h1>
+    {% else %}
+        <h1>No se mostrarán los nombres</h1>
+    {% endif %}
+
     <ul>
         {% for persona in personas %}
-            <li>{{ forloop.counter }}. {{ persona.nombre }} 
-                ({{ persona.edad }} años)</li>
+            <li>{{ persona.nombre }} ({{ persona.edad }} años)</li>
+        {% empty %}
+            <li>No hay personas registradas.</li>
         {% endfor %}
     </ul>
 </body>
