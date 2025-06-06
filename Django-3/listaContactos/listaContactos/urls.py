@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from personas.views import lista_personas
+from personas.views import persona_create_view as crear_persona
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('personas/', lista_personas), 
+    path('personas/', lista_personas),  # ya la tenías
+    path('personas/nueva/', crear_persona),  # NUEVA ruta para el formulario
 ]

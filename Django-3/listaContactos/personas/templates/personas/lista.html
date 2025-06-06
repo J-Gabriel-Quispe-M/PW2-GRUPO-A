@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Personas</title>
-</head>
-<body>
-    <h1>Total de personas: {{ personas|length }}</h1>
-
-    <ul>
-        {% for persona in personas %}
-            <li>
-                {% if persona.nombre %}
-                    {{ forloop.counter }}. {{ persona.nombre|upper }} ({{ persona.edad }} años)
-                {% else %}
-                    {{ forloop.counter }}. [Sin nombre] ({{ persona.edad }} años)
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<h2>Lista de Personas</h2>
+<ul>
+    {% for persona in personas %}
+        <li>{{ persona.nombres }} {{ persona.apellidos }} - Edad: {{ persona.edad }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'crear_persona' %}">Agregar Nueva Persona</a>
+{% endblock %}

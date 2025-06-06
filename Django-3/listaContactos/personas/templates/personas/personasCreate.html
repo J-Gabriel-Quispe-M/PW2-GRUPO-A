@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Agregar Nueva Persona</h2>
+<form method="POST">
+    {% csrf_token %}  <!-- Protección CSRF -->
+    {{ form.as_p }}  <!-- Renderiza el formulario como párrafos -->
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

@@ -1,14 +1,24 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from .models import Persona
+from .forms import PersonaForm
 
-def lista_personas(request):
-    personas = [
-        {'nombre': 'Juan', 'edad': 30},
-        {'nombre': 'Ana', 'edad': 25},
-        {'nombre': 'Luis', 'edad': 40},
-        {'nombre': '', 'edad': 22},
-    ]
-    contexto = {
-        'personas': personas
-    }
-    return render(request, 'personas/lista.html', contexto)
+def persona_create_view(request):
+    if request.method == 'POST':
+        form = PersonaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_personas')  # Asegúrate de que esta URL existe
+    else:
+        form = PersonaForm()
+    return render(request, 'personas/personasCreate.html', {'form': form})
 
+def crear_persona(request):  # Nombre que coincide con la importación
+    # mantén el mismo código
+    if request.method == 'POST':
+        form = PersonaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_personas')
+    else:
+        form = PersonaForm()
+    return render(request, 'personas/personasCreate.html', {'form': form})
