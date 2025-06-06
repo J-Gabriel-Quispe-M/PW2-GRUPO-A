@@ -4,12 +4,11 @@ def lista_personas(request):
     personas = [
         {'nombre': 'Juan', 'edad': 30},
         {'nombre': 'Ana', 'edad': 25},
-        {'nombre': 'Luis', 'edad': 40}
+        {'nombre': 'Luis', 'edad': 40},
+        {'nombre': '', 'edad': 22},
     ]
-    mostrar_titulo = True  # Variable condicional
-
     contexto = {
-        'personas': personas,
-        'mostrar_titulo': mostrar_titulo
+        'personas': personas
     }
     return render(request, 'personas/lista.html', contexto)
+
