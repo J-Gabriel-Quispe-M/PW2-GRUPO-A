@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from personas.views import vista_contexto
+
+from personas.views import lista_personas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', vista_contexto, name='home'),     
+    path('personas/', lista_personas), 
 ]

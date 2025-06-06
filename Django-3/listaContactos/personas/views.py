@@ -1,8 +1,12 @@
 from django.shortcuts import render
 
-def vista_contexto(request):
+def lista_personas(request):
+    personas = [
+        {'nombre': 'Juan', 'edad': 30},
+        {'nombre': 'Ana', 'edad': 25},
+        {'nombre': 'Luis', 'edad': 40}
+    ]
     contexto = {
-        'myText' : 'Esto es entre nosotros',
-        'myNumber' : 123,
+        'personas': personas
     }
-    return render (request, 'personas/test.html', contexto)
+    return render(request, 'personas/lista.html', contexto)

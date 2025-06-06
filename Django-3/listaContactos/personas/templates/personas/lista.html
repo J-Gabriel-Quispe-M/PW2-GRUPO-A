@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Personas</title>
+</head>
+<body>
+    <h1>Personas registradas</h1>
+    <ul>
+        {% for persona in personas %}
+            <li>{{ forloop.counter }}. {{ persona.nombre }} 
+                ({{ persona.edad }} años)</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
