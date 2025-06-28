@@ -44,3 +44,16 @@ def editar_persona(request, id):
         })
 
     return render(request, 'personas/editar_persona.html', {'form': form, 'persona': persona})
+
+def eliminar_persona(request, id):
+    persona = get_object_or_404(Persona, id=id)
+
+    if request.method == 'POST':
+        persona.delete()
+        return redirect('lista_personas')
+
+    return render(request, 'personas/eliminar_persona.html', {'persona': persona})
+
+def detalle_persona(request, id):
+    persona = get_object_or_404(Persona, id=id)
+    return render(request, 'personas/detalle_persona.html', {'persona': persona})

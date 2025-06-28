@@ -11,6 +11,7 @@
             <li>
                 {{ persona.nombre }} - {{ persona.email }} - {{ persona.telefono }}
                 | <a href="{% url 'editar_persona' persona.id %}">Editar</a>
+                | <a href="{% url 'eliminar_persona' persona.id %}">Eliminar</a>
             </li>
         {% empty %}
             <li>No hay personas registradas.</li>
