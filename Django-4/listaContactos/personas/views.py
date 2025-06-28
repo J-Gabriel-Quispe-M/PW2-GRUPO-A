@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import PersonaForm
 from .models import Persona
+from django.shortcuts import get_object_or_404
+
 
 def crear_persona(request):
     if request.method == 'POST':
@@ -20,3 +22,25 @@ def crear_persona(request):
 def lista_personas(request):
     personas = Persona.objects.all()
     return render(request, 'personas/lista_personas.html', {'personas': personas})
+
+def editar_persona(request, id):
+    persona = get_object_or_404(Persona, id=id)
+
+    if request.method == 'POST':
+        form = PersonaForm(request.POST)
+        if form.is_valid():
+            # Actualizar los datos manualmente
+            persona.nombre = form.cleaned_data['nombre']
+            persona.email = form.cleaned_data['email']
+            persona.telefono = form.cleaned_data['telefono']
+            persona.save()
+            return redirect('lista_personas')
+    else:
+        # Precarga los datos con initial=
+        form = PersonaForm(initial={
+            'nombre': persona.nombre,
+            'email': persona.email,
+            'telefono': persona.telefono,
+        })
+
+    return render(request, 'personas/editar_persona.html', {'form': form, 'persona': persona})

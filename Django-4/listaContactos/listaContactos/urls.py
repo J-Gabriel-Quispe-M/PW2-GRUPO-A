@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from personas.views import crear_persona
 from personas.views import lista_personas
+from personas.views import editar_persona
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('personas/nueva/', crear_persona, name='crear_persona'),
     path('personas/', lista_personas, name='lista_personas'),
+    path('personas/editar/<int:id>/', editar_persona, name='editar_persona'),
 ]
 
