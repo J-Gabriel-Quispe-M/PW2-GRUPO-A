@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Personas</title>
+</head>
+<body>
+    <h1>Personas registradas</h1>
+    <a href="{% url 'crear_persona' %}">Agregar nueva persona</a>
+    <ul>
+        {% for persona in personas %}
+            <li>
+                {{ persona.nombre }} - {{ persona.email }} - {{ persona.telefono }}
+            </li>
+        {% empty %}
+            <li>No hay personas registradas.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
