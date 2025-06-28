@@ -8,12 +8,12 @@ def crear_persona(request):
     if request.method == 'POST':
         form = PersonaForm(request.POST)
         if form.is_valid():
-            Persona.objects.create(
+            persona = Persona.objects.create(
                 nombre=form.cleaned_data['nombre'],
                 email=form.cleaned_data['email'],
                 telefono=form.cleaned_data['telefono']
             )
-            return redirect('lista_personas')  
+            return redirect(persona.get_absolute_url()) 
     else:
         form = PersonaForm()
     
