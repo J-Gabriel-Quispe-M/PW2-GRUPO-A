@@ -87,3 +87,9 @@ class PersonaUpdateView(UpdateView):
 
     def get_success_url(self):
         return self.object.get_absolute_url()
+    
+class PersonaDeleteView(DeleteView):
+    model = Persona
+    template_name = 'personas/persona_confirm_delete.html'
+    success_url = reverse_lazy('personas:persona_list')
+
