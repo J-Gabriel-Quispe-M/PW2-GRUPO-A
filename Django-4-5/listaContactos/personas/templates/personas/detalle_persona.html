@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle de Persona</title>
+</head>
+<body>
+    <h1>Detalle de {{ persona.nombre }}</h1>
+    <p>Email: {{ persona.email }}</p>
+    <p>Teléfono: {{ persona.telefono }}</p>
+    <a href="{% url 'lista_personas' %}">Volver a la lista</a>
+</body>
+</html>
