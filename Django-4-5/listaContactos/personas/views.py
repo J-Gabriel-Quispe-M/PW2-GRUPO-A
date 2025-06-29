@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import PersonaForm
 from .models import Persona
 from django.shortcuts import get_object_or_404
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from .models import Persona
 
 
 def crear_persona(request):
@@ -57,3 +60,13 @@ def eliminar_persona(request, id):
 def detalle_persona(request, id):
     persona = get_object_or_404(Persona, id=id)
     return render(request, 'personas/detalle_persona.html', {'persona': persona})
+
+class PersonaListView(ListView):
+    model = Persona
+    template_name = 'personas/persona_list.html'
+    context_object_name = 'personas'
+
+class PersonaDetailView(DetailView):
+    model = Persona
+    template_name = 'personas/persona_detail.html'
+    context_object_name = 'persona'
