@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Persona
+from .forms import PersonaForm
 
 
 def crear_persona(request):
@@ -70,3 +71,11 @@ class PersonaDetailView(DetailView):
     model = Persona
     template_name = 'personas/persona_detail.html'
     context_object_name = 'persona'
+
+class PersonaCreateView(CreateView):
+    model = Persona
+    form_class = PersonaForm
+    template_name = 'personas/persona_form.html'
+
+    def get_success_url(self):
+        return self.object.get_absolute_url()
