@@ -79,3 +79,11 @@ class PersonaCreateView(CreateView):
 
     def get_success_url(self):
         return self.object.get_absolute_url()
+    
+class PersonaUpdateView(UpdateView):
+    model = Persona
+    form_class = PersonaForm
+    template_name = 'personas/persona_form.html'  # Reutilizamos el mismo template
+
+    def get_success_url(self):
+        return self.object.get_absolute_url()
