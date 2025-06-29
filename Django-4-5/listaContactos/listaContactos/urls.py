@@ -21,7 +21,8 @@ from personas.views import lista_personas
 from personas.views import editar_persona
 from personas.views import eliminar_persona
 from personas.views import detalle_persona
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),

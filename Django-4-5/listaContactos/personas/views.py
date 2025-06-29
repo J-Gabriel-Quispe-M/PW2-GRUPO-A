@@ -6,6 +6,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.urls import reverse_lazy
 from .models import Persona
 from .forms import PersonaForm
+from django.http import JsonResponse
 
 
 def crear_persona(request):
@@ -93,3 +94,6 @@ class PersonaDeleteView(DeleteView):
     template_name = 'personas/persona_confirm_delete.html'
     success_url = reverse_lazy('personas:persona_list')
 
+def personas_json(request):
+    personas = Persona.objects.all().values('id', 'nombre', 'email', 'telefono')
+    return JsonResponse(list(personas), safe=False)

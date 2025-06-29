@@ -1,4 +1,5 @@
 from django.urls import path
+from .views import personas_json
 from .views import (
     PersonaListView,
     PersonaDetailView,
@@ -15,4 +16,5 @@ urlpatterns = [
     path('crear/', PersonaCreateView.as_view(), name='persona_create'),
     path('<int:pk>/editar/', PersonaUpdateView.as_view(), name='persona_update'),
     path('<int:pk>/eliminar/', PersonaDeleteView.as_view(), name='persona_delete'),
+    path('json/', personas_json, name='personas_json'),
 ]
