@@ -7,3 +7,14 @@
   <h2>{{ email }}</h2>
   <h2>{{ webpage }}</h2>
 </div>
+
+<div>
+  <h3>Hobbies:</h3>
+  <ul>
+    <li *ngFor="let hobby of filteredHobbies">{{ hobby }}</li>
+  </ul>
+</div>
+<a href="{{ webpage }}" target="_blank">Visita mi sitio Web</a>
+<div class="black">
+  <h1> {{ title }}</h1>
+</div>
