@@ -8,12 +8,17 @@
   <h2>{{ webpage }}</h2>
 </div>
 
-<div>
+<button (click)="toggleHobbies()">
+  {{ mostrarHobbies ? 'Ocultar Hobbies' : 'Mostrar Hobbies' }}
+</button>
+
+<div *ngIf="mostrarHobbies">
   <h3>Hobbies:</h3>
   <ul>
     <li *ngFor="let hobby of filteredHobbies">{{ hobby }}</li>
   </ul>
 </div>
+
 <a href="{{ webpage }}" target="_blank">Visita mi sitio Web</a>
 <div class="black">
   <h1> {{ title }}</h1>
