@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { NgFor, NgIf } from '@angular/common';
 import { HelloWorldComponent } from './hello-world/hello-world';
+import { UserComponent } from './user/user';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgFor, NgIf, HelloWorldComponent],
+  imports: [NgFor, NgIf, HelloWorldComponent, UserComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
@@ -40,4 +41,9 @@ export class AppComponent {
       this.filteredHobbies.push(nuevo);
     }
   }
+
+  users = ['ryan', 'joe', 'cameron', 'john'];
+  activated = false;
+
+
 }
