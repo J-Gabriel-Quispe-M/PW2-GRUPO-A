@@ -8,6 +8,14 @@
   <h2>{{ webpage }}</h2>
 </div>
 
+<div>
+  <input #hobbyInput type="text" placeholder="Nuevo hobby">
+  <button (click)="agregarHobby(hobbyInput.value); hobbyInput.value=''">
+    Agregar Hobby
+  </button>
+</div>
+
+
 <button (click)="toggleHobbies()">
   {{ mostrarHobbies ? 'Ocultar Hobbies' : 'Mostrar Hobbies' }}
 </button>

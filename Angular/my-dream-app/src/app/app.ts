@@ -33,4 +33,10 @@ export class AppComponent {
   toggleHobbies() {
     this.mostrarHobbies = !this.mostrarHobbies;
   }
+
+  agregarHobby(nuevo: string) {
+    if (nuevo.length > 5) {
+      this.filteredHobbies.push(nuevo);
+    }
+  }
 }
