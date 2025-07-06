@@ -53,4 +53,11 @@ export class AppComponent {
     this.users = this.users.filter(user => user !== nombre);
   }
 
+  addUser(newUser: any): boolean {
+    this.users.push(newUser.value);
+    newUser.value = '';
+    newUser.focus();
+    return false;
+  }
+
 }

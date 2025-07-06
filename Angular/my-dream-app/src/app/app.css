@@ -38,3 +38,12 @@ button:nth-child(3) {
   background-color: #dc3545; /* Eliminar */
   color: white;
 }
+
+input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+form {
+  margin-bottom: 15px;
+}

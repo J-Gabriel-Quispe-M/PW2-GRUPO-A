@@ -35,13 +35,21 @@
 <hr>
 <app-hello-world></app-hello-world>
 
+<h1>Desde app.component.ts</h1>
+
+<form (submit)="addUser(newUser)">
+  <input type="text" #newUser />
+  <button>Agregar Usuario</button>
+</form>
+
 <ul>
   <li *ngFor="let user of users">
     <app-user [nameUser]="user"></app-user>
-    <button (click)="mostrarAlerta(user)">Saludar</button>
-    <button (click)="eliminarUsuario(user)">Eliminar</button>
+    <button (click)="mostrarAlerta(user)">Hazme click solo a mí</button>
+    <button (click)="eliminarUsuario(user)">Borrar Usuario</button>
   </li>
 </ul>
+
 
 
 
