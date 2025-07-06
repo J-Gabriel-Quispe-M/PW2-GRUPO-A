@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { NgFor, NgIf } from '@angular/common';
+import { HelloWorldComponent } from './hello-world/hello-world';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, HelloWorldComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
