@@ -38,6 +38,10 @@
 <ul>
   <li *ngFor="let user of users">
     <app-user [nameUser]="user"></app-user>
+    <button (click)="mostrarAlerta(user)">Saludar</button>
+    <button (click)="eliminarUsuario(user)">Eliminar</button>
   </li>
 </ul>
+
+
 

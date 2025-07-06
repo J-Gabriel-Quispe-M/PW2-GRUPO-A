@@ -45,5 +45,12 @@ export class AppComponent {
   users = ['ryan', 'joe', 'cameron', 'john'];
   activated = false;
 
+  mostrarAlerta(nombre: string) {
+    alert(`Hola, ${nombre}!`);
+  }
+
+  eliminarUsuario(nombre: string) {
+    this.users = this.users.filter(user => user !== nombre);
+  }
 
 }
