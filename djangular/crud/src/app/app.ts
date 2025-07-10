@@ -1,12 +1,31 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ApiService } from './api';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
+  providers: [ApiService]
 })
-export class App {
-  protected title = 'crud';
+export class AppComponent {
+  movies = [{id: 1, title: 'peli1', desc: 'demo', year: 2021}, {id: 2, title: 'peli2', desc: 'otro demo', year: 2022}];
+
+  constructor(private api: ApiService) {
+    this.getMovies();
+  }
+
+  getMovies = () => {
+    this.api.getAllMovies().subscribe(
+      data => {
+        console.log(data);
+        // this.movies = data;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
 }
