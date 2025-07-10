@@ -11,7 +11,8 @@ import { ApiService } from './api';
   providers: [ApiService]
 })
 export class AppComponent {
-  movies = [{id: 1, title: 'peli1', desc: 'demo', year: 2021}, {id: 2, title: 'peli2', desc: 'otro demo', year: 2022}];
+  movies = [{id: 1, title: 'peli1', desc: 'demo', 
+    year: 2021}, {id: 2, title: 'peli2', desc: 'otro demo', year: 2022}];
 
   constructor(private api: ApiService) {
     this.getMovies();
@@ -21,7 +22,7 @@ export class AppComponent {
     this.api.getAllMovies().subscribe(
       data => {
         console.log(data);
-        // this.movies = data;
+          this.movies = data;
       },
       error => {
         console.error(error);
